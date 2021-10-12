@@ -8,7 +8,7 @@ public class PelaajanCollider : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-       if(collision.collider.tag == "Fireball")
+       if(collision.collider.tag == "lyijy")
         {
             //   Instantiate(osumaEffect, transform.position, transform.rotation);
             //   GameObject.instance.Endgame();

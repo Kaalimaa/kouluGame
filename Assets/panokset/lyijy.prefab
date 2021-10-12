@@ -126,7 +126,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 08ba3b0281c3b7b43ba1d0d18f1233ed, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.525
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -222,3 +222,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e9c0f22d7ebc743a8c8b7dae8fa0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spark: {fileID: 100004, guid: fb7b0526ade434043b350a180d741cf3, type: 3}
+  particleSys: {fileID: 0}
