@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Jahtaa : MonoBehaviour
 {
+   // public BulletParticle bulletPart;
+
     private NavMeshAgent agent;
     public Transform kohde;
     //public Animator anima;
@@ -13,7 +15,7 @@ public class Jahtaa : MonoBehaviour
     {
      //   anima = GetComponent<Animator>();
         agent = this.GetComponent<NavMeshAgent>();
-        
+     //   bulletPart = FindObjectOfType<BulletParticle>();
         //lähtee kohti kohdetta
        // agent.SetDestination(kohde.position);
     }
@@ -49,7 +51,18 @@ public class Jahtaa : MonoBehaviour
         {
             GetComponent<Renderer>().material.color = GetRandomColor();
         }
+        if (collision.collider.tag == "orb")
+        {
+            GetComponent<Renderer>().material.color = GetRandomColor();
+        }
     }
+    //private void OnParticleCollision(GameObject other)
+    //{
+    //    if (other.TryGetComponent(out BulletParticle bullet))
+    //    {
+    //       // vihu.TakeDamage(damage);
+    //    }
+    //}
     private Color GetRandomColor()
     {
         return new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));

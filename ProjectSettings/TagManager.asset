@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - Enemy
   - VoiOttaa
+  - orb
   layers:
   - Default
   - TransparentFX

@@ -32,14 +32,18 @@ public class Bullet : MonoBehaviour
 
       
 
-        if (collision.collider.tag == "Enemy")
-        {
-           
+        //if (collision.collider.tag == "Enemy")
+        //{
+        //    if (collision.TryGetComponent(out EnemyAI vihu))
+        //    {
+        //        vihu.TakeDamage(damage);
+        //    }
 
-            FindObjectOfType<AudioManager>().Play("uhh");
+        //    FindObjectOfType<AudioManager>().Play("uhh");
 
-            Destroy(gameObject, 0.3f);
-        }
+        //    Destroy(gameObject, 0.3f);
+        //}
+       
         if (collision.collider.tag == "Fireball")
         {
             FindObjectOfType<AudioManager>().Play("uhh");

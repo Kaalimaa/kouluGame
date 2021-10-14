@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletParticle : MonoBehaviour
 {
+    public int damage = 10;
     public GameObject spark;
     public ParticleSystem particleSys;
     List<ParticleCollisionEvent> colEvents = new List<ParticleCollisionEvent>();
@@ -23,5 +24,11 @@ public class BulletParticle : MonoBehaviour
         {
             Instantiate(spark, colEvents[i].intersection, Quaternion.LookRotation(colEvents[i].normal));
         }
+        if(other.TryGetComponent(out EnemyAI vihu))
+        {
+            vihu.TakeDamage(damage);
+        }
+       
     }
+
 }
