@@ -22,6 +22,7 @@ public class EnemyAI : MonoBehaviour
     bool walkPointSet;
     public float walkPointRange;
 
+
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
@@ -55,6 +56,8 @@ public class EnemyAI : MonoBehaviour
 
        
     }
+  
+   
 
     private void Patroling()
     {
@@ -118,6 +121,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void DestroyEnemy()
     {
+        
         Destroy(gameObject);
     }
     private void OnDrawGizmosSelected()
@@ -134,9 +138,17 @@ public class EnemyAI : MonoBehaviour
         {
             GetComponent<Renderer>().material.color = GetRandomColor();
         }
+      
+        
     }
+    public void RandomColorM()
+    {
+        GetRandomColor();
+    }
+
     private Color GetRandomColor()
     {
         return new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
     }
+
 }

@@ -103,7 +103,7 @@ public class projectileGun : MonoBehaviour
 
         bulletsLeft--;
         bulletsShot++;
-        //Instansiate muzzleFlash, if you have one
+        //Instansiate muzzleFlash, if you have one selected
         if (muzzleFlash != null)
             Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 

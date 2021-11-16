@@ -8,16 +8,23 @@ public class BulletParticle : MonoBehaviour
     public GameObject spark;
     public ParticleSystem particleSys;
     List<ParticleCollisionEvent> colEvents = new List<ParticleCollisionEvent>();
+    AudioManager audioManager;
 
+    private void Start()
+    {
+        audioManager =  FindObjectOfType<AudioManager>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
+          //  FindObjectOfType<AudioManager>();
             particleSys.Play();
         }
     }
     private void OnParticleCollision(GameObject other)
     {
+        audioManager.Play("orbHit");
         int events = particleSys.GetCollisionEvents(other, colEvents);
         Debug.Log("Hit");
         for ( int i = 0; i< events; i++)
@@ -27,8 +34,19 @@ public class BulletParticle : MonoBehaviour
         if(other.TryGetComponent(out EnemyAI vihu))
         {
             vihu.TakeDamage(damage);
+            vihu.GetComponent<Renderer>().material.color = GetRandomColor();
+           
+
+            audioManager.Play("uhh");
+            
         }
        
+
+
+    }
+    private Color GetRandomColor()
+    {
+        return new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
     }
 
 }
